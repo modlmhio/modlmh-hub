@@ -1,156 +1,722 @@
-<!-- MODLMH Footer Start -->
-<footer class="modlmh-footer">
-  <div class="modlmh-footer-container">
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MODLMH - Game Mod APK & Ứng Dụng Android</title>
+  <meta name="description" content="MODLMH là trang giới thiệu game mod APK, ứng dụng Android và tin tức công nghệ. Truy cập nhanh danh mục Game, Ứng Dụng, Tin Tức và các chính sách chính thức của MODLMH.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://modlmhio.github.io/modlmh/">
+  <link rel="icon" href="https://modlmh.io/wp-content/uploads/2025/09/Modlmh-150x150.png">
 
-    <div class="modlmh-footer-brand">
-      <h2>MODLMH</h2>
-      <p>
-        MODLMH là nền tảng chia sẻ game mod APK, ứng dụng Android và tin tức công nghệ,
-        tập trung vào trải nghiệm tải xuống an toàn, rõ ràng và dễ sử dụng cho người dùng Việt Nam.
-      </p>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MODLMH - Game Mod APK & Ứng Dụng Android">
+  <meta property="og:description" content="Khám phá MODLMH với kho game mod APK, ứng dụng Android, tin tức và các hướng dẫn an toàn nội dung.">
+  <meta property="og:url" content="https://modlmhio.github.io/modlmh/">
+  <meta property="og:image" content="https://modlmh.io/wp-content/uploads/2025/09/Mod-LMH.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://modlmh.io/#organization",
+        "name": "MODLMH",
+        "url": "https://modlmh.io/",
+        "logo": "https://modlmh.io/wp-content/uploads/2025/09/Modlmh.png",
+        "email": "contact@modlmh.io",
+        "sameAs": [
+          "https://modlmh.io/",
+          "https://modlmh.io/game/",
+          "https://modlmh.io/ung-dung/",
+          "https://modlmh.io/blog/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://modlmhio.github.io/modlmh/#website",
+        "url": "https://modlmhio.github.io/modlmh/",
+        "name": "MODLMH",
+        "publisher": {
+          "@id": "https://modlmh.io/#organization"
+        },
+        "inLanguage": "vi-VN"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --primary:#5d913f;
+      --primary-dark:#3f702b;
+      --primary-soft:#eef8ea;
+      --ink:#222831;
+      --muted:#667085;
+      --line:#e7eadf;
+      --surface:#ffffff;
+      --soft:#f7f9f5;
+      --footer:#0f1f13;
+      --radius:16px;
+      --shadow:0 14px 38px rgba(40,55,45,.09);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:#fff;
+      font-family:Arial,Helvetica,sans-serif;
+      line-height:1.6;
+    }
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    .container{width:min(1160px,calc(100% - 32px));margin:auto}
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.96);
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(12px);
+    }
+    .header-inner{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      gap:28px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      color:var(--primary);
+      font-size:25px;
+      letter-spacing:.4px;
+    }
+    .brand img{width:46px;height:46px;border-radius:12px;object-fit:cover}
+    .main-nav{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      font-weight:800;
+      font-size:14px;
+      margin-left:10px;
+    }
+    .main-nav a:hover{color:var(--primary)}
+    .search{
+      margin-left:auto;
+      display:flex;
+      width:min(350px,34vw);
+    }
+    .search input{
+      width:100%;
+      border:1px solid var(--line);
+      border-right:0;
+      border-radius:11px 0 0 11px;
+      padding:11px 14px;
+      outline:none;
+      background:#fafafa;
+    }
+    .search input:focus{border-color:var(--primary);background:#fff}
+    .search button{
+      border:0;
+      padding:0 18px;
+      border-radius:0 11px 11px 0;
+      color:white;
+      background:var(--primary);
+      cursor:pointer;
+      font-weight:800;
+    }
+    .menu-toggle{
+      display:none;
+      margin-left:auto;
+      border:1px solid var(--line);
+      background:white;
+      border-radius:9px;
+      padding:9px 12px;
+      cursor:pointer;
+    }
+
+    .hero{
+      padding:58px 0 34px;
+      text-align:center;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(93,145,63,.14), transparent 32%),
+        linear-gradient(180deg,#fff,#f8fbf5);
+    }
+    .hero h1{
+      max-width:920px;
+      margin:0 auto 16px;
+      color:var(--primary);
+      font-size:clamp(32px,5vw,54px);
+      line-height:1.15;
+    }
+    .hero p{
+      max-width:860px;
+      margin:auto;
+      color:#333b43;
+      font-size:17px;
+    }
+    .hero-actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      margin-top:24px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 20px;
+      border-radius:10px;
+      font-weight:800;
+      border:1px solid var(--line);
+      transition:.2s;
+    }
+    .btn-primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .btn-light{background:#fff}
+    .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+    .section{padding:38px 0}
+    .section-soft{background:var(--soft)}
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:20px;
+      margin-bottom:20px;
+    }
+    .section-head h2{
+      margin:0;
+      color:var(--primary-dark);
+      font-size:28px;
+      line-height:1.25;
+    }
+    .section-head p{
+      margin:6px 0 0;
+      color:var(--muted);
+    }
+    .section-head>a{
+      color:var(--primary);
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    .category-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .category-card{
+      padding:24px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:#fff;
+      box-shadow:0 6px 18px rgba(40,55,45,.04);
+      transition:.25s;
+    }
+    .category-card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow);
+      border-color:rgba(93,145,63,.35);
+    }
+    .category-icon{
+      width:48px;
+      height:48px;
+      display:grid;
+      place-items:center;
+      border-radius:14px;
+      background:var(--primary-soft);
+      color:var(--primary);
+      font-size:25px;
+      margin-bottom:14px;
+    }
+    .category-card h3{margin:0 0 8px;font-size:20px}
+    .category-card p{margin:0;color:var(--muted);font-size:15px}
+
+    .featured-track{
+      display:grid;
+      grid-auto-flow:column;
+      grid-auto-columns:minmax(320px,calc(50% - 8px));
+      gap:16px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      padding:4px 2px 12px;
+      scrollbar-width:thin;
+    }
+    .featured-card{
+      min-height:285px;
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius);
+      scroll-snap-align:start;
+      background:#111;
+      box-shadow:var(--shadow);
+    }
+    .featured-card>a{display:block;height:100%}
+    .featured-card img{
+      width:100%;
+      height:285px;
+      object-fit:cover;
+      transition:transform .35s;
+    }
+    .featured-card:hover img{transform:scale(1.04)}
+    .image-shade{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,transparent 25%,rgba(0,0,0,.82) 100%);
+    }
+    .featured-copy{
+      position:absolute;
+      left:20px;
+      right:20px;
+      bottom:18px;
+      color:white;
+    }
+    .featured-copy h3{
+      font-size:22px;
+      line-height:1.25;
+      margin:0 0 8px;
+    }
+    .meta{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .featured-copy .meta{color:#fff}
+    .meta span+span:before{
+      content:"•";
+      margin-right:8px;
+      color:var(--primary);
+    }
+    .categories{
+      display:flex;
+      gap:6px;
+      flex-wrap:wrap;
+      margin:8px 0;
+    }
+    .categories span{
+      font-size:11px;
+      background:#edf0f2;
+      color:#535a64;
+      padding:3px 7px;
+      border-radius:6px;
+    }
+    .featured-copy .categories span{
+      background:rgba(255,255,255,.9);
+      color:#333;
+    }
+
+    .content-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .grid-card{
+      overflow:hidden;
+      border-radius:var(--radius);
+      background:white;
+      border:1px solid var(--line);
+      transition:.25s;
+    }
+    .grid-card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow);
+    }
+    .grid-image img{
+      width:100%;
+      aspect-ratio:16/9;
+      object-fit:cover;
+    }
+    .grid-copy{padding:14px 15px 16px}
+    .grid-copy h3{
+      font-size:17px;
+      line-height:1.35;
+      margin:0 0 8px;
+    }
+    .grid-copy h3:hover{color:var(--primary)}
+
+    .policy-list{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+    .policy-link{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      align-items:center;
+      padding:16px 18px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      font-weight:800;
+      transition:.2s;
+    }
+    .policy-link span{color:var(--primary)}
+    .policy-link:hover{
+      border-color:rgba(93,145,63,.45);
+      transform:translateY(-2px);
+      box-shadow:var(--shadow);
+    }
+
+    .about{
+      padding:34px;
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:linear-gradient(135deg,#f4fff1,#fff);
+    }
+    .about h2{margin-top:0;color:var(--primary-dark)}
+    .about p{color:#4d535d}
+    .about-links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+    .about-links a{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid #d9e9d5;
+      background:white;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .site-footer{
+      margin-top:40px;
+      background:var(--footer);
+      color:#dfeee2;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.25fr 1fr 1fr 1fr;
+      gap:30px;
+      padding:46px 0 34px;
+    }
+    .footer-grid h3{
+      margin:0 0 14px;
+      color:#fff;
+      font-size:18px;
+    }
+    .footer-grid p,
+    .footer-grid li{
+      font-size:14px;
+      color:#c8d8cc;
+    }
+    .footer-grid ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    .footer-grid li{margin:9px 0}
+    .footer-grid a:hover{color:#75c957}
+    .copyright{
+      border-top:1px solid rgba(255,255,255,.12);
+      padding:18px 0;
+      text-align:center;
+      font-size:13px;
+      color:#b8c7bc;
+    }
+
+    @media(max-width:900px){
+      .main-nav,.search{display:none}
+      .menu-toggle{display:block}
+      .main-nav.open{
+        display:flex;
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        padding:18px 20px;
+        background:white;
+        border-bottom:1px solid var(--line);
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .featured-track{grid-auto-columns:82%}
+      .category-grid,.content-grid{grid-template-columns:repeat(2,1fr)}
+      .policy-list{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media(max-width:600px){
+      .container{width:min(100% - 22px,1160px)}
+      .brand{font-size:21px}
+      .brand img{width:40px;height:40px}
+      .hero{padding-top:40px}
+      .hero p{font-size:15px}
+      .featured-track{grid-auto-columns:92%}
+      .featured-card,.featured-card img{height:235px;min-height:235px}
+      .category-grid,.content-grid{grid-template-columns:1fr}
+      .section{padding:30px 0}
+      .section-head{align-items:center}
+      .section-head h2{font-size:23px}
+      .footer-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="https://modlmh.io/" target="_blank" rel="noopener" aria-label="MODLMH">
+      <img src="https://modlmh.io/wp-content/uploads/2025/09/Modlmh-300x300.png" alt="MODLMH">
+      <span>MODLMH</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="https://modlmh.io/" target="_blank" rel="noopener">Trang Chủ</a>
+      <a href="https://modlmh.io/game/" target="_blank" rel="noopener">Game</a>
+      <a href="https://modlmh.io/ung-dung/" target="_blank" rel="noopener">Ứng Dụng</a>
+      <a href="https://modlmh.io/blog/" target="_blank" rel="noopener">Tin Tức</a>
+      <a href="https://modlmh.io/gioi-thieu/" target="_blank" rel="noopener">Giới Thiệu</a>
+    </nav>
+
+    <form class="search" action="https://modlmh.io/" method="get" target="_blank">
+      <input type="search" name="s" placeholder="Tìm game, ứng dụng..." aria-label="Tìm kiếm trên MODLMH">
+      <button type="submit">Tìm</button>
+    </form>
+
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Mở menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>MODLMH – Kho Game Mod APK & Ứng Dụng Android</h1>
+      <p>MODLMH giới thiệu các tựa game mod APK, ứng dụng Android, tin tức và hướng dẫn tải xuống theo cách rõ ràng, dễ hiểu và ưu tiên an toàn nội dung cho người dùng.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://modlmh.io/" target="_blank" rel="noopener">Truy Cập MODLMH</a>
+        <a class="btn btn-light" href="#danh-muc">Khám Phá Danh Mục</a>
+      </div>
     </div>
+  </section>
 
-    <div class="modlmh-footer-grid">
-
-      <div class="modlmh-footer-column">
-        <h3>Thông Tin</h3>
-        <ul>
-          <li><a href="https://modlmh.io/gioi-thieu/" target="_blank" rel="noopener noreferrer">Giới Thiệu</a></li>
-          <li><a href="https://modlmh.io/lien-he" target="_blank" rel="noopener noreferrer">Liên Hệ</a></li>
-          <li><a href="https://modlmh.io/moderator/" target="_blank" rel="noopener noreferrer">Người Sáng Lập: Nguyễn Viết Đăng</a></li>
-          <li><a href="#faq">FAQ – Câu Hỏi Thường Gặp</a></li>
-        </ul>
+  <section class="section" id="danh-muc">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Danh Mục Chính</h2>
+          <p>Các khu vực nội dung quan trọng trên MODLMH.</p>
+        </div>
       </div>
 
-      <div class="modlmh-footer-column">
-        <h3>Chính Sách</h3>
-        <ul>
-          <li><a href="https://modlmh.io/dmca/" target="_blank" rel="noopener noreferrer">DMCA</a></li>
-          <li><a href="https://modlmh.io/chinh-sach-bao-mat/" target="_blank" rel="noopener noreferrer">Chính Sách Bảo Mật</a></li>
-          <li><a href="https://modlmh.io/?page_id=3761&preview=true" target="_blank" rel="noopener noreferrer">Chính Sách Biên Tập</a></li>
-          <li><a href="https://modlmh.io/chinh-sach-kiem-duyet-apk/" target="_blank" rel="noopener noreferrer">Chính Sách Kiểm Duyệt APK & An Toàn Nội Dung Của MODLMH</a></li>
-        </ul>
+      <div class="category-grid">
+        <a class="category-card" href="https://modlmh.io/game/" target="_blank" rel="noopener">
+          <div class="category-icon">🎮</div>
+          <h3>Game</h3>
+          <p>Khám phá game Android, game mod APK, trò chơi hành động, chiến thuật, mô phỏng và nhiều thể loại nổi bật.</p>
+        </a>
+
+        <a class="category-card" href="https://modlmh.io/ung-dung/" target="_blank" rel="noopener">
+          <div class="category-icon">📱</div>
+          <h3>Ứng Dụng</h3>
+          <p>Tổng hợp ứng dụng Android, công cụ tiện ích, chỉnh sửa ảnh/video, giải trí và nhiều app được quan tâm.</p>
+        </a>
+
+        <a class="category-card" href="https://modlmh.io/blog/" target="_blank" rel="noopener">
+          <div class="category-icon">📰</div>
+          <h3>Tin Tức</h3>
+          <p>Cập nhật bài viết, hướng dẫn, mẹo sử dụng và thông tin mới xoay quanh game, app và Android.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Nội Dung Nổi Bật</h2>
+          <p>Các nhóm nội dung thường được người dùng tìm kiếm.</p>
+        </div>
+        <a href="https://modlmh.io/" target="_blank" rel="noopener">Xem Website</a>
       </div>
 
-      <div class="modlmh-footer-column">
-        <h3>Danh Mục</h3>
-        <ul>
-          <li><a href="https://modlmh.io/game/" target="_blank" rel="noopener noreferrer">Game</a></li>
-          <li><a href="https://modlmh.io/ung-dung/" target="_blank" rel="noopener noreferrer">Ứng Dụng</a></li>
-          <li><a href="https://modlmh.io/blog/" target="_blank" rel="noopener noreferrer">Tin Tức</a></li>
-        </ul>
+      <div class="featured-track">
+        <article class="featured-card">
+          <a href="https://modlmh.io/game/" target="_blank" rel="noopener">
+            <img src="https://modlmh.io/wp-content/uploads/2025/09/Mod-LMH.png" alt="Game Mod APK trên MODLMH" loading="lazy">
+            <div class="image-shade"></div>
+            <div class="featured-copy">
+              <h3>Game Mod APK</h3>
+              <div class="categories"><span>Game</span><span>Android</span></div>
+              <div class="meta"><span>Kho game cập nhật</span><span>Trải nghiệm dễ tìm</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="featured-card">
+          <a href="https://modlmh.io/ung-dung/" target="_blank" rel="noopener">
+            <img src="https://modlmh.io/wp-content/uploads/2025/09/Mod-LMH.png" alt="Ứng dụng Android trên MODLMH" loading="lazy">
+            <div class="image-shade"></div>
+            <div class="featured-copy">
+              <h3>Ứng Dụng Android</h3>
+              <div class="categories"><span>App</span><span>Công cụ</span></div>
+              <div class="meta"><span>Ứng dụng tiện ích</span><span>Dễ truy cập</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="featured-card">
+          <a href="https://modlmh.io/blog/" target="_blank" rel="noopener">
+            <img src="https://modlmh.io/wp-content/uploads/2025/09/Mod-LMH.png" alt="Tin tức MODLMH" loading="lazy">
+            <div class="image-shade"></div>
+            <div class="featured-copy">
+              <h3>Tin Tức & Hướng Dẫn</h3>
+              <div class="categories"><span>Blog</span><span>Cập nhật</span></div>
+              <div class="meta"><span>Thông tin mới</span><span>Hướng dẫn nhanh</span></div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Khám Phá Nhanh</h2>
+          <p>Gợi ý bố cục card để bạn thay bài viết thật sau này.</p>
+        </div>
       </div>
 
+      <div class="content-grid">
+        <article class="grid-card">
+          <a class="grid-image" href="https://modlmh.io/game/" target="_blank" rel="noopener">
+            <img src="https://modlmh.io/wp-content/uploads/2025/09/Mod-LMH.png" alt="Tải game mod APK">
+          </a>
+          <div class="grid-copy">
+            <a href="https://modlmh.io/game/" target="_blank" rel="noopener"><h3>Tải Game Mod APK Trên MODLMH</h3></a>
+            <div class="categories"><span>Game</span><span>APK</span></div>
+            <div class="meta"><span>Danh mục Game</span><span>MODLMH</span></div>
+          </div>
+        </article>
+
+        <article class="grid-card">
+          <a class="grid-image" href="https://modlmh.io/ung-dung/" target="_blank" rel="noopener">
+            <img src="https://modlmh.io/wp-content/uploads/2025/09/Mod-LMH.png" alt="Ứng dụng Android">
+          </a>
+          <div class="grid-copy">
+            <a href="https://modlmh.io/ung-dung/" target="_blank" rel="noopener"><h3>Ứng Dụng Android Được Quan Tâm</h3></a>
+            <div class="categories"><span>Ứng Dụng</span><span>Android</span></div>
+            <div class="meta"><span>Danh mục App</span><span>MODLMH</span></div>
+          </div>
+        </article>
+
+        <article class="grid-card">
+          <a class="grid-image" href="https://modlmh.io/blog/" target="_blank" rel="noopener">
+            <img src="https://modlmh.io/wp-content/uploads/2025/09/Mod-LMH.png" alt="Tin tức Android">
+          </a>
+          <div class="grid-copy">
+            <a href="https://modlmh.io/blog/" target="_blank" rel="noopener"><h3>Tin Tức, Hướng Dẫn Và Mẹo Android</h3></a>
+            <div class="categories"><span>Tin Tức</span><span>Blog</span></div>
+            <div class="meta"><span>Bài viết mới</span><span>Hướng dẫn</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Trang Chính Sách & Thông Tin</h2>
+          <p>Các trang quan trọng giúp người dùng hiểu rõ hơn về MODLMH.</p>
+        </div>
+      </div>
+
+      <div class="policy-list">
+        <a class="policy-link" href="https://modlmh.io/lien-he" target="_blank" rel="noopener">Liên Hệ <span>→</span></a>
+        <a class="policy-link" href="https://modlmh.io/gioi-thieu/" target="_blank" rel="noopener">Giới Thiệu <span>→</span></a>
+        <a class="policy-link" href="https://modlmh.io/dmca/" target="_blank" rel="noopener">DMCA <span>→</span></a>
+        <a class="policy-link" href="https://modlmh.io/chinh-sach-bao-mat/" target="_blank" rel="noopener">Chính Sách Bảo Mật <span>→</span></a>
+        <a class="policy-link" href="#faq">FAQ – Câu Hỏi Thường Gặp <span>→</span></a>
+        <a class="policy-link" href="https://modlmh.io/moderator/" target="_blank" rel="noopener">Người Sáng Lập: Nguyễn Viết Đăng <span>→</span></a>
+        <a class="policy-link" href="https://modlmh.io/?page_id=3761&preview=true" target="_blank" rel="noopener">Chính Sách Biên Tập <span>→</span></a>
+        <a class="policy-link" href="https://modlmh.io/chinh-sach-kiem-duyet-apk/" target="_blank" rel="noopener">Chính Sách Kiểm Duyệt APK & An Toàn Nội Dung <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container about">
+      <h2>Về MODLMH</h2>
+      <p>MODLMH là website tập trung vào game mod APK, ứng dụng Android và các nội dung hướng dẫn liên quan. Trang GitHub Pages này đóng vai trò như một landing page vệ tinh, giúp giới thiệu thương hiệu, điều hướng người dùng về website chính và tăng độ rõ ràng của hệ thống liên kết.</p>
+      <p><strong>FAQ – Câu Hỏi Thường Gặp:</strong> Bạn nên thay phần này bằng link FAQ chính thức khi trang FAQ đã được public trên MODLMH.</p>
+      <div class="about-links">
+        <a href="https://modlmh.io/" target="_blank" rel="noopener">Website Chính</a>
+        <a href="https://modlmh.io/game/" target="_blank" rel="noopener">Game</a>
+        <a href="https://modlmh.io/ung-dung/" target="_blank" rel="noopener">Ứng Dụng</a>
+        <a href="https://modlmh.io/blog/" target="_blank" rel="noopener">Tin Tức</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>MODLMH</h3>
+      <p>Trang giới thiệu thương hiệu MODLMH, điều hướng người dùng tới website chính, danh mục game, ứng dụng, tin tức và các trang chính sách quan trọng.</p>
     </div>
 
-    <div class="modlmh-footer-bottom">
-      <p>© 2026 MODLMH. All rights reserved.</p>
-      <p>Website vệ tinh hỗ trợ giới thiệu thương hiệu MODLMH.</p>
+    <div>
+      <h3>Thông Tin</h3>
+      <ul>
+        <li><a href="https://modlmh.io/gioi-thieu/" target="_blank" rel="noopener">Giới Thiệu</a></li>
+        <li><a href="https://modlmh.io/lien-he" target="_blank" rel="noopener">Liên Hệ</a></li>
+        <li><a href="https://modlmh.io/moderator/" target="_blank" rel="noopener">Người Sáng Lập: Nguyễn Viết Đăng</a></li>
+        <li><a href="#faq">FAQ – Câu Hỏi Thường Gặp</a></li>
+      </ul>
     </div>
 
+    <div>
+      <h3>Chính Sách</h3>
+      <ul>
+        <li><a href="https://modlmh.io/dmca/" target="_blank" rel="noopener">DMCA</a></li>
+        <li><a href="https://modlmh.io/chinh-sach-bao-mat/" target="_blank" rel="noopener">Chính Sách Bảo Mật</a></li>
+        <li><a href="https://modlmh.io/?page_id=3761&preview=true" target="_blank" rel="noopener">Chính Sách Biên Tập</a></li>
+        <li><a href="https://modlmh.io/chinh-sach-kiem-duyet-apk/" target="_blank" rel="noopener">Chính Sách Kiểm Duyệt APK & An Toàn Nội Dung Của MODLMH</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Danh Mục</h3>
+      <ul>
+        <li><a href="https://modlmh.io/game/" target="_blank" rel="noopener">Game</a></li>
+        <li><a href="https://modlmh.io/ung-dung/" target="_blank" rel="noopener">Ứng Dụng</a></li>
+        <li><a href="https://modlmh.io/blog/" target="_blank" rel="noopener">Tin Tức</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2026 MODLMH. Trang GitHub Pages vệ tinh hỗ trợ giới thiệu thương hiệu và điều hướng về modlmh.io.
   </div>
 </footer>
-<!-- MODLMH Footer End -->
 
-<style>
-  .modlmh-footer {
-    background: #0f1f13;
-    color: #dfeee2;
-    padding: 48px 20px 24px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
 
-  .modlmh-footer-container {
-    max-width: 1180px;
-    margin: 0 auto;
-  }
-
-  .modlmh-footer-brand {
-    margin-bottom: 32px;
-  }
-
-  .modlmh-footer-brand h2 {
-    margin: 0 0 12px;
-    font-size: 30px;
-    color: #75c957;
-    letter-spacing: 0.5px;
-  }
-
-  .modlmh-footer-brand p {
-    max-width: 760px;
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.7;
-    color: #c8d8cc;
-  }
-
-  .modlmh-footer-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    margin-bottom: 32px;
-  }
-
-  .modlmh-footer-column h3 {
-    margin: 0 0 14px;
-    font-size: 18px;
-    color: #ffffff;
-  }
-
-  .modlmh-footer-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .modlmh-footer-column li {
-    margin-bottom: 10px;
-  }
-
-  .modlmh-footer-column a {
-    color: #dfeee2;
-    text-decoration: none;
-    font-size: 15px;
-    line-height: 1.5;
-    transition: color 0.2s ease, padding-left 0.2s ease;
-  }
-
-  .modlmh-footer-column a:hover {
-    color: #75c957;
-    padding-left: 4px;
-  }
-
-  .modlmh-footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    padding-top: 18px;
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-    font-size: 14px;
-    color: #b8c7bc;
-  }
-
-  .modlmh-footer-bottom p {
-    margin: 0;
-  }
-
-  @media (max-width: 768px) {
-    .modlmh-footer {
-      padding: 36px 16px 22px;
-    }
-
-    .modlmh-footer-grid {
-      grid-template-columns: 1fr;
-      gap: 22px;
-    }
-
-    .modlmh-footer-brand h2 {
-      font-size: 26px;
-    }
-
-    .modlmh-footer-bottom {
-      flex-direction: column;
-    }
-  }
-</style>
+  menuToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+  });
+</script>
+</body>
+</html>
