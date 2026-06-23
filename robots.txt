@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
 
+Sitemap: https://modlmhio.github.io/modlmh-hub/sitemap.xml
